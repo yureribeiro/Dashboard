@@ -1,0 +1,91 @@
+import React, { useState } from 'react'
+import { DivContainer, Header, Container, Form } from './style'
+import LOGO from '../../images/LOGO.png'
+import { validateEmail, validatePassword } from '../../Utils/verificate'
+import { NavLink, useNavigate } from 'react-router-dom'
+import api from '../../api'
+
+const Login = () => {
+  const [user, setUser] = useState()
+  const [loading, setLoading] = useState()
+  const [form, setForm] = useState([])
+  const navigate = useNavigate()
+
+  // pega os valores digitados nos inputs do formulario
+  const handleChange = (event) => {
+    setForm({ ...form, [event.target.name]: event.target.value })
+  }
+
+  const userExists = async () => {
+    const users = await api.get('users', form)
+    console.log(users)
+    const findUser = users.data.find(user => user.email === form.email && user.password === form.password)
+    if (findUser !== undefined) {
+      setUser(findUser)
+      navigate('/dashboard')
+    } else {
+      alert('Usuário não encontrado')
+    }
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      setLoading(true)
+      await userExists()
+    }
+    catch (error) {
+      console.log('algo deu errado', error)
+    }
+    setLoading(false)
+  }
+
+  const validateInput = () => {
+    return validateEmail(form.email) && validatePassword(form.password)
+  }
+
+  return (
+    <>
+      <DivContainer>
+        <Header>
+          <img src={LOGO} />
+          <NavLink to='register'>Criar conta</NavLink>
+        </Header>
+
+        <Container >
+          <img src={LOGO} />
+          <Form>
+            <p>Email:</p>
+            <input
+              name='email'
+              type='email'
+              onChange={handleChange}
+              placeholder='Digite seu email...'
+            />
+            <p>Senha:</p>
+            <input
+              name='password'
+              type='password'
+              onChange={handleChange}
+              placeholder='Digite seu senha...'
+            />
+            <div>
+              <button
+                type='submit'
+                onClick={handleSubmit}
+                disabled={loading === true || !validateInput()}>
+                ENTRAR
+              </button>
+            </div>
+            <small>
+              não possui conta?
+              <NavLink to='register'>Registrar-se</NavLink>
+            </small>
+          </Form>
+        </Container>
+      </DivContainer>
+    </>
+  )
+}
+
+export default Login

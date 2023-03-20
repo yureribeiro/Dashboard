@@ -1,27 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { DivContainer, Header, Container, Form } from './style'
 import LOGO from '../../images/LOGO.png'
 import { validateEmail, validatePassword } from '../../Utils/verificate'
 import { NavLink, useNavigate } from 'react-router-dom'
 import api from '../../api'
+import userContext from '../../Utils/context'
 
 const Login = () => {
-  const [user, setUser] = useState()
   const [loading, setLoading] = useState()
   const [form, setForm] = useState([])
   const navigate = useNavigate()
+  const { user, setUser } = useContext(userContext)
 
   // pega os valores digitados nos inputs do formulario
   const handleChange = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value })
   }
 
+  //verifica no banco de dados se o usuario existe
   const userExists = async () => {
     const users = await api.get('users', form)
-    console.log(users)
     const findUser = users.data.find(user => user.email === form.email && user.password === form.password)
+
     if (findUser !== undefined) {
-      setUser(findUser)
+      setUser(findUser) //atualiza o contexto do usuario
+      console.log(findUser)
       navigate('/dashboard')
     } else {
       alert('Usuário não encontrado')

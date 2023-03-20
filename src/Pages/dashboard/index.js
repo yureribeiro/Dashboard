@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { NavLink, useNavigate } from "react-router-dom"
 import { Histórico, FlexColumn, DashboardContainer, Sidebar, CategoryContainer, Card, BalanceCards } from "./style"
 import { Header } from '../Login/style'
@@ -12,18 +12,32 @@ import boneIcone from '../../images/bone-icone.png'
 import moletomIcone from '../../images/moletom-icone.png'
 import sueterIcone from '../../images/sueter-icone.png'
 import oculosIcone from '../../images/oculos-icone.png'
-
-
+import api from "../../api"
+// import userContext from "../../Utils/context"
 
 const Dashboard = () => {
-  const [balance, setBalance] = useState('')
- 
+  const [balance, setBalance] = useState(0)
   const navigate = useNavigate()
 
-  const handleClick = () => {
-    navigate('/sales')
+
+  //
+  const getBalance = async () => {
+    try {
+      const sales = await api.get(`sales/1/1`)
+
+      let totalSales = 0
+
+      sales.data.forEach((sale) => {
+        totalSales += parseFloat(sale.price.replace(",", ".")) // convertendo o preço para um número
+      })
+      setBalance(totalSales)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
+
+  // const { user } = useContext(userContext)
   return (
     <>
       <Header>
@@ -48,62 +62,33 @@ const Dashboard = () => {
       <DashboardContainer>
         <FlexColumn>
           <BalanceCards>
-            <p>Total Mês</p>
-            <p> R$: 00,00</p>
-          </BalanceCards>
-          <BalanceCards>
-            <p>Total Semana</p>
-            <p> R$: 00,00</p>
+            <p>Total vendas</p>
+            <p>R$ {balance}</p>
+            <button onClick={getBalance}></button>
           </BalanceCards>
 
           <Histórico>
-            <table>
-              <tr>
-                <th>Categoria</th>
-                <th>Quantidade</th>
-                <th>Preço</th>
-              </tr>
-              <tr>
-                <td>Camiseta</td>
-                <td>3</td>
-                <td>R$ 54.00</td>
-              </tr>
-              <tr>
-                <td>Boné</td>
-                <td>2</td>
-                <td>R$ 24.00</td>
-              </tr>
-              <tr>
-                <td>Moletom</td>
-                <td>5</td>
-                <td>R$ 224.00</td>
-              </tr>
-              <tr>
-                <td>Camiseta</td>
-                <td>5</td>
-                <td>R$ 70.00</td>
-              </tr>
-            </table>
+            <div>Historico aqui!</div>
           </Histórico>
         </FlexColumn>
 
         <CategoryContainer>
-          <Card onClick={handleClick}>
+          <Card >
             <img src={camisaIcone} />
           </Card>
-          <Card onClick={handleClick}>
+          <Card >
             <img src={bermudaIcone} />
           </Card>
-          <Card onClick={handleClick}>
+          <Card >
             <img src={boneIcone} />
           </Card>
-          <Card onClick={handleClick}>
+          <Card >
             <img src={sueterIcone} />
           </Card>
-          <Card onClick={handleClick}>
+          <Card >
             <img src={oculosIcone} />
           </Card>
-          <Card onClick={handleClick}>
+          <Card >
             <img src={moletomIcone} />
           </Card>
         </CategoryContainer>

@@ -1,12 +1,9 @@
 import React, {useState} from "react"
-import { NavLink, useNavigate } from "react-router-dom"
-import { Sidebar } from "../dashboard/style"
+import Sidebar from "../../Components/sidebar"
 import { Header } from '../Login/style'
 import { SalesForm, Container } from './style'
 import LOGO from '../../images/LOGO.png'
-import CategoryIcon from '../../images/category.png'
-import ChartIcon from '../../images/chart-pie-slice.png'
-import ClockIcon from '../../images/clock-counter-clockwise.png'
+
 
 const Sales = () => {
   const [form, setForm] = useState([])
@@ -42,20 +39,7 @@ const Sales = () => {
         <img src={LOGO} />
       </Header>
 
-      <Sidebar>
-        <div>
-          <img src={ChartIcon} />
-          <NavLink to={'/dashboard'}>Dashboard</NavLink>
-        </div>
-        <div>
-          <img src={CategoryIcon} />
-          <NavLink to={'/category'}>Categorias</NavLink>
-        </div>
-        <div>
-          <img src={ClockIcon} />
-          <NavLink to={'/dashboard'}>Histórico</NavLink>
-        </div>
-      </Sidebar>
+      <Sidebar/>
 
       <Container>
         <SalesForm>

@@ -5,7 +5,7 @@ import Category from '../Pages/Category'
 import Dashboard from '../Pages/dashboard'
 import Sales from '../Pages/Sales/index'
 import Register from '../Pages/Register/index'
-import userContext from '../Utils/context'
+import { userContext } from '../Utils/UserContext'
 
 const Routers = () => {
   const [user, setUser] = useState()

@@ -4,7 +4,7 @@ import LOGO from '../../images/LOGO.png'
 import { validateEmail, validatePassword } from '../../Utils/verificate'
 import { NavLink, useNavigate } from 'react-router-dom'
 import api from '../../api'
-import userContext from '../../Utils/context'
+import { userContext } from '../../Utils/UserContext'
 
 const Login = () => {
   const [loading, setLoading] = useState()
@@ -62,6 +62,7 @@ const Login = () => {
             <input
               name='email'
               type='email'
+              value={user}
               onChange={handleChange}
               placeholder='Digite seu email...'
             />
@@ -69,6 +70,7 @@ const Login = () => {
             <input
               name='password'
               type='password'
+              value={user}
               onChange={handleChange}
               placeholder='Digite seu senha...'
             />

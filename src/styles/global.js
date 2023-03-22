@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import background from '../images/background-black-desktop.jpg'
+
 
 
 const GlobalStyle = createGlobalStyle`
@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     width: 100vw;
     height: 100vh;
-    background-image: url(${background});
+    background-color: #2B2B28;
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Arial, Helvetica;

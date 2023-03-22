@@ -1,6 +1,5 @@
 import styled from "styled-components"
 
-
 export const DivContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -18,6 +17,7 @@ background: linear-gradient(90.42deg, #DF8600 8.59%, #E5BF37 85.12%);
 justify-content: space-between;
 align-items: center;
 padding-right: 2rem;
+
 
  a {
   color: #000;
@@ -39,6 +39,10 @@ padding-right: 2rem;
     padding-left: 1rem;
     width: 5rem;
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.9));
+  }
+
+  p {
+    font-weight: bold;
   }
 `
 

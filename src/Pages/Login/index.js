@@ -23,8 +23,10 @@ const Login = () => {
     const findUser = users.data.find(user => user.email === form.email && user.password === form.password)
 
     if (findUser !== undefined) {
-      setUser(findUser) //atualiza o contexto do usuario
-      console.log(findUser)
+      const { id, name } = findUser
+      setUser({ id, name }) //atualiza o contexto do usuario
+      localStorage.setItem('user', JSON.stringify({ id, name }))
+
       navigate('/dashboard')
     } else {
       alert('Usuário não encontrado')

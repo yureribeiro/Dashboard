@@ -1,15 +1,16 @@
-import React from 'react'
-// import { userContext } from '../../Utils/UserContext'
+import React, { useContext } from 'react'
+import { userContext } from '../../Utils/UserContext'
 import { useNavigate } from 'react-router-dom'
 import { Buttonlogout } from './style'
 import LogoutImg from '../../images/logout.svg'
 
 const Logout = () => {
-  // const { user, setUser } = userContext(userContext)
+  const { user, setUser } = useContext(userContext)
   const navigate = useNavigate()
 
   const logoff = async () => {
-    // setUser(null)
+    localStorage.removeItem(user)
+    await setUser(null)
     navigate('/')
   }
 

@@ -1,8 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-
-
-
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
@@ -12,9 +9,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     width: 100vw;
     height: 100vh;
-    background-color: #2B2B28;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #222831;
     font-family: Arial, Helvetica;
   }
 `

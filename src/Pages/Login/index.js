@@ -79,7 +79,7 @@ const Login = () => {
                 type='submit'
                 onClick={handleSubmit}
                 disabled={loading === true || !validateInput()}>
-                ENTRAR
+                Entrar
               </button>
             </div>
             <small>

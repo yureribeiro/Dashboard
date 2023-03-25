@@ -1,36 +1,59 @@
 import styled from "styled-components";
 
 export const CategoryContainer = styled.div`
-  background: linear-gradient(150.65deg, #DF8600 8.59%, #E5BF37 85.12%);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
-  gap: .5rem;
   border-radius: .5rem;
-  margin-left: 2.5rem;
+  background-color: #393E46;
+  box-shadow: .1rem .1rem .3rem #000; 
 `
 
 export const Card = styled.div`
-  cursor: pointer;
-  background-color: #232323;
+  background-color: #222831;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: gray;
+  color: #d3d3d3;
+  border: .1rem solid #E1E8EB;
   border-radius: .5rem;
-  flex-direction: column;
   padding: 1rem; 
-  height: 7rem;
-
+  box-shadow: .1rem .1rem .3rem #000;
   :hover {
-    box-shadow: .1rem .1rem .4rem #000;
-    color: #ffff;
+    color: #FFD369;
   }
-
-  img {
-    width: 4.8rem;
-    background: linear-gradient(150.65deg, #DF8600 8.59%, #E5BF37 85.12%);
-    border-radius: 50%;
-    padding: 1rem;
+`
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .2rem;
+  padding: 1rem 0 .5rem 0;
+  color: #fff;
+`
+export const Input = styled.input`
+  padding: .3rem .7rem;
+  background-color: #393E46;
+  border: .1rem solid rgba(228, 228, 228, 0.2);
+  border-radius: .5rem;
+  margin-bottom: .5rem;
+  outline: none;
+  color: #ffff;
+  cursor: pointer;
+  ::placeholder {
+      color: #d3d3d3;
+    }
+`
+export const SubmitButton = styled.button`
+  background-color: #FFD369;
+  padding: .5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: .5rem;
+  :hover {
+    background-color: #FDB827;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4);
   }
 `

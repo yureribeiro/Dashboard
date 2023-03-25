@@ -8,42 +8,42 @@ export const DivContainer = styled.div`
 `
 
 export const Header = styled.header`
-display: flex;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-background: linear-gradient(90.42deg, #DF8600 8.59%, #E5BF37 85.12%);
-justify-content: space-between;
-align-items: center;
-padding-right: 2rem;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #393E46;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 2rem;
+  box-shadow: 0 .1rem .5rem #000; 
+ 
 
+  a {
+    color: #000;
+    text-decoration: none;
+    background-color: #FFD369;
+    border: none;
+    border-radius: .5rem;
+    padding: .4rem 1rem;
+    cursor: pointer;
+    transition: .4s;
+    }
+    a:hover {
+        background-color: #FDB827;
+        box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4);
+    }
 
- a {
-  color: #000;
-  text-decoration: none;
-  background: linear-gradient( 92deg, #ecdb7b, #daa000);
-  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4);
-  border: none;
-  border-radius: .5rem;
-  padding: .4rem 1rem;
-  cursor: pointer;
-  transition: .4s;
- }
- a:hover {
-    background: #0f0f0f77;
-    color: #ffff;
-}
+    img {
+      padding-left: 1rem;
+      width: 5rem;
+      filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.9));
+    }
 
-  img {
-    padding-left: 1rem;
-    width: 5rem;
-    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.9));
-  }
-
-  p {
-    font-weight: bold;
-  }
+    p {
+      font-weight: bold;
+    }
 `
 
 export const Container = styled.div`
@@ -52,12 +52,11 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(137.59deg, #DF8600 35.2%, #E5BF37 82.62%);
-  border: .1rem solid rgba(228, 228, 228, 0.54);
+  background-color: #393E46;
   border-radius: .5rem;
   padding: 1rem;
-  margin-top: 25vh;
-
+  margin-top: 23vh;
+  box-shadow: .2rem .2rem .6rem #000; 
   img {
     width: 7rem;
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.9));
@@ -68,9 +67,9 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   padding: 0 1.5rem 1rem 1.5rem;
+  color #FFD369;
 
   p {
-    font-weight: bold;
     display: flex;
     text-align: left;
   }
@@ -97,7 +96,7 @@ export const Form = styled.form`
   }
 
   button {
-    background: linear-gradient( 92deg, #ecdb7b, #daa000);
+    background-color: #FFD369;
     box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4);
     border: none;
     border-radius: .5rem;
@@ -108,9 +107,9 @@ export const Form = styled.form`
     transition: .4s;
     }
     button:hover {
-      background: #0f0f0f77;
-      color: #ffff;
-    }
+      background-color: #FDB827;
+      box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4);
+  }
 
     small {
       margin-top: 1rem;
@@ -120,7 +119,7 @@ export const Form = styled.form`
 
     a {
       text-decoration: none;
-      color: #000;
+      color: #d3d3d3;
       font-weight: bold;
       font-style: italic;
       cursor: pointer;

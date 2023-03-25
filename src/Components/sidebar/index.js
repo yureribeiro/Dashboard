@@ -1,25 +1,40 @@
-import React from 'react'
-import { Container } from './style'
+import React, { useState } from 'react'
+import { Container, Button } from './style'
 import { NavLink } from "react-router-dom"
 import CategoryIcon from '../../images/category.png'
 import ChartIcon from '../../images/chart-pie-slice.png'
 import ClockIcon from '../../images/clock-counter-clockwise.png'
+import Lamp from '../../images/lamp.svg'
+import Logout from '../logout'
+import { lightTheme, darkTheme } from '../../styles/theme'
+import { ThemeProvider } from 'styled-components'
 
 const Sidebar = () => {
+  const [theme, setTheme] = useState(lightTheme);
+
+  const toggleTheme = () => {
+    setTheme(theme === lightTheme ? darkTheme : lightTheme);
+  };
+
   return (
     <Container>
       <div>
-        <img src={ChartIcon} />
-        <NavLink to={'/dashboard'}>Dashboard</NavLink>
+        <NavLink to={'/dashboard'}> <img src={ChartIcon} /></NavLink>
       </div>
       <div>
-        <img src={CategoryIcon} />
-        <NavLink to={'/category'}>Categorias</NavLink>
+        <NavLink to={'/dashboard'}><img src={CategoryIcon} /></NavLink>
       </div>
       <div>
-        <img src={ClockIcon} />
-        <NavLink to={'/dashboard'}>Histórico</NavLink>
+        <NavLink to={'/dashboard'}> <img src={ClockIcon} /></NavLink>
       </div>
+
+      <ThemeProvider theme={theme}>
+        <Button onClick={toggleTheme}>
+          <img src={Lamp} />
+        </Button>
+      </ThemeProvider>
+
+      <Logout />
     </Container>
   )
 }

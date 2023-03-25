@@ -2,26 +2,31 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  justify-content: center;
+  gap: 1rem;
 `
 
 export const BalanceCards = styled.div`
   display: flex;
   flex-direction: column;
-  background: linear-gradient(150.65deg, #DF8600 8.59%, #E5BF37 85.12%);
+  background-color: #393E46;
+  box-shadow: .1rem .1rem .3rem #000; 
   padding: 1rem;
   border-radius: .5rem;
-  width: 50%;
-  margin-right: 5rem;
+  width: 100%;
   gap: .5rem;
   font-weight: bold;
+  color: #d3d3d3;
 
   button {
-    background-color: #000;
-    color: #fff;
+    background-color: #FFD369;
+    color: #000;
     font-weight: bold;
     padding: .5rem 1rem;
     border-radius: .5rem;
     border: .1rem solid #232323;
+    :hover {
+      background: #FDB827;
+      box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4);
+    }
   }
 `

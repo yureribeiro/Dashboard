@@ -1,30 +1,23 @@
 import styled from "styled-components";
 
 export const Container = styled.nav`
-  position: fixed;
-  top: 4rem;
+  width: 5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  background: linear-gradient(150.65deg, #DF8600 8.59%, #E5BF37 85.12%);
-  padding: 12.5rem 0 0 0;
-  height: 100vh;
-  min-width: 19vw;
-
+  justify-content: center;
+  align-items: center;
+  background-color: #393E46;
+  height: 70vh;
+  border-radius: 1rem;
+  box-shadow: .1rem .1rem .3rem #000; 
+  margin-right: 1rem;
   div {
     display: flex;
-    justify-content: flex-start;
-    padding-left: 1.5rem;
     align-items: center;
-    gap: .5rem;
     margin-bottom: 1rem;
   }
 
   a {
-    text-decoration: none;
-    color: #000; 
-    font-weight: bold;
-    text-transform: uppercase;
     cursor: pointer;
   }
 
@@ -32,3 +25,13 @@ export const Container = styled.nav`
     max-width: 2rem;
   }
 `
+export const Button = styled.button`
+  background-color: ${props => props.theme.primaryColor};
+  color: ${props => props.theme.textColor};
+  border: .1rem solid #F8F1E5;
+  border-radius: 1.3rem;
+  cursor: pointer;
+  padding: .3rem .1rem;
+  
+`
+

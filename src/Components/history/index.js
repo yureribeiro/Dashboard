@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Container } from './style'
+import { Container, Delete } from './style'
 import api from "../../api"
 import { userContext } from "../../Utils/UserContext"
-
+import deleteImg from '../../images/delete.svg'
 
 const History = () => {
   const [history, setHistory] = useState([])
@@ -12,6 +12,7 @@ const History = () => {
     try {
       const sales = await api.get(`sales/${user.id}/1/total`)
       setHistory(sales.data)
+      console.log(sales.data)
     } catch (error) {
       console.error(error)
     }
@@ -21,6 +22,16 @@ const History = () => {
     getHistory()
   }, [])
 
+  const handleDelete = async () => {
+    try {
+      const deleteSale = await api.delete(`sales/${user.id}`)
+      setHistory(deleteSale.data)
+      console.log(deleteSale.data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <Container>
       {history.map((sale) => (
@@ -28,8 +39,10 @@ const History = () => {
           <p>{sale.id}</p>
           <p>Quantidade: {sale.quantity}</p>
           <p>Preço: {sale.price}</p>
-          <p>ID da categoria: {sale.categoryId}</p>
-          <p>ID do usuário: {sale.userId}</p>
+          <p>Categoria: {sale.categoryName}</p>
+          <Delete onClick={handleDelete}>
+            <img src={deleteImg} />
+          </Delete>
         </div>
       ))}
     </Container>

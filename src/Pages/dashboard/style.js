@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const DashboardContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   aligh-items: center;
-  padding: 18vh 1rem 1rem 22vw;
+  gap: 1rem;
+  margin-top: 16vh;
 `
 
 export const FlexColumn = styled.div`
@@ -13,4 +14,3 @@ export const FlexColumn = styled.div`
   gap: .5rem;
   margin-right: 1rem;
 `
-

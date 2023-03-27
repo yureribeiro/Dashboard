@@ -1,6 +1,23 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  scrollbar-width: thin;
+  scrollbar-color: #FFD369 #222831;
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #222831;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #FFD369;
+    border-radius: 20px;
+    border: 3px solid #222831;
+  }
+
   display: flex;
   flex-direction: column;
   max-height: 49vh;
@@ -12,6 +29,7 @@ export const Container = styled.div`
   overflow-x: auto;
 
   div {
+    background-color: #222831;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,7 +37,7 @@ export const Container = styled.div`
     margin-bottom: .5rem;
     padding: .5rem;
     border-radius: .5rem;
-    box-shadow: 0 .2rem .2rem rgba(0, 0, 0, 0.3);
+    box-shadow: .1rem .1rem .2rem rgba(0, 0, 0, 0.7);
     color: #d3d3d3;
   }
 
@@ -36,8 +54,9 @@ export const Delete = styled.button`
   cursor: pointer;
   font-weight: bold;
   border-radius: .5rem;
+  transition: .4s;
   :hover {
-    background-color: #FDB827;
+    background-color: #393E46;
     box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4);
   }
 `

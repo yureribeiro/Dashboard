@@ -21,12 +21,11 @@ const Login = () => {
   const userExists = async () => {
     const users = await api.get('users', form)
     const findUser = users.data.find(user => user.email === form.email && user.password === form.password)
+    console.log(findUser)
 
     if (findUser !== undefined) {
       const { id, name } = findUser
-      setUser({ id, name }) //atualiza o contexto do usuario
-      localStorage.setItem('user', JSON.stringify({ id, name }))
-
+      await setUser({ id, name }) //atualiza o contexto do usuario
       navigate('/dashboard')
     } else {
       alert('Usuário não encontrado')

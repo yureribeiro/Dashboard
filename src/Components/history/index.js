@@ -34,17 +34,21 @@ const History = () => {
 
   return (
     <Container>
-      {history.map((sale) => (
-        <div key={sale.id}>
-          <p>{sale.id}</p>
-          <p>Quantidade: {sale.quantity}</p>
-          <p>Preço: {sale.price}</p>
-          <p>Categoria: {sale.categoryName}</p>
-          <Delete onClick={handleDelete}>
-            <img src={deleteImg} />
-          </Delete>
-        </div>
-      ))}
+      {history.length === 0 ? (
+        <p>Histórico de registros vazio</p>
+      ) : (
+        history.map((sale) => (
+          <div key={sale.id}>
+            <p>{sale.id}</p>
+            <p>Quantidade: {sale.quantity}</p>
+            <p>Preço: {sale.price}</p>
+            <p>Categoria: {sale.categoryName}</p>
+            <Delete onClick={handleDelete}>
+              <img src={deleteImg} />
+            </Delete>
+          </div>
+        ))
+      )}
     </Container>
   )
 }

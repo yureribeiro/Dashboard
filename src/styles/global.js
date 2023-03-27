@@ -1,4 +1,6 @@
 import { createGlobalStyle } from "styled-components"
+
+
 export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -7,10 +9,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    width: 100vw;
-    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
     background-color: #222831;
     font-family: Arial, Helvetica;
+    
   }
 `
 

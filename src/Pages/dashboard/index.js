@@ -14,12 +14,12 @@ const Dashboard = () => {
       <DashboardContainer>
         <Sidebar />
 
+        <Categories />
+
         <FlexColumn>
           <Card />
           <History />
         </FlexColumn>
-
-        <Categories />
       </DashboardContainer>
     </>
   )

@@ -20,13 +20,23 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
-  max-height: 54vh;
+  min-height: 55%;
+  max-height: 70%;
   background-color: #393E46;
   box-shadow: .1rem .1rem .3rem #000; 
   padding: 1rem;
   margin-top: 1rem;
   border-radius: .5rem;
-  overflow-x: auto;
+  overflow: auto;
+
+  @media (max-width: 1050px) {
+    min-height: 55%;
+    max-height: 52%;
+
+    p:first-of-type {
+      display: none;
+    }
+  }
 
   div {
     background-color: #222831;

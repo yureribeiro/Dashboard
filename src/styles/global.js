@@ -13,7 +13,6 @@ export const GlobalStyle = createGlobalStyle`
     max-height: 100vh;
     background-color: #222831;
     font-family: Arial, Helvetica;
-    
   }
 `
 

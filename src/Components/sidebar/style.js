@@ -7,17 +7,32 @@ export const Container = styled.nav`
   justify-content: space-between;
   align-items: center;
   background-color: #393E46;
-  height: 76vh;
+  min-height: 60vh;
+  max-height: 82vh;
   border-radius: .6rem;
   box-shadow: .1rem .1rem .3rem #000; 
   padding-bottom: 1rem;
   margin-right: 1rem;
+  
+  @media (max-width: 600px) {
+    flex-direction: row;
+    min-height: 5vh;
+    max-height: 8vh;
+    align-items: center;
+   }
+
 
   div {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 1rem;
+
+    @media (max-width: 600px) {
+      flex-direction: row;
+      gap: 1rem;
+      padding-left: 1rem;
+     }
   }
 
   a {
@@ -30,7 +45,8 @@ export const Container = styled.nav`
     border: .1rem solid #232323;
     transition: .4s;
     :hover {
-      background: #EEEEEE;
+      background-color: #393E46;
+      border-color: #d3d3d3;
       box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4);
     }
   }

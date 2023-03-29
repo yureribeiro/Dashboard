@@ -7,7 +7,7 @@ import Register from '../Pages/Register/index'
 import { userContext } from '../Utils/UserContext'
 
 const Routers = () => {
-  const [user, setUser] = useState()
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
 
   return (
     <userContext.Provider value={{ user, setUser }}>

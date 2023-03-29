@@ -25,6 +25,7 @@ const Login = () => {
 
     if (findUser !== undefined) {
       const { id, name } = findUser
+      localStorage.setItem('user', JSON.stringify({ id, name }))
       await setUser({ id, name }) //atualiza o contexto do usuario
       navigate('/dashboard')
     } else {

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Container, BalanceCards } from './style'
+import { Container, BalanceCards, ChartCard } from './style'
 import api from "../../api"
 import { userContext } from "../../Utils/UserContext"
-
+import ChartSales from '../chart'
 
 const Card = () => {
   const [balance, setBalance] = useState(0)
@@ -10,7 +10,7 @@ const Card = () => {
 
   const getBalance = async () => {
     try {
-      const sales = await api.get(`sales/${user.id}/1/total`)
+      const sales = await api.get(`sales/${user.id}/0/total`)
       const totalSales = sales.data.reduce((acc, sale) => acc + parseFloat(sale.price.replace(",", ".")), 0) // somando o valor de price de cada venda
       setBalance(totalSales.toFixed(2)) // arredondando o resultado para duas casas decimais
     } catch (error) {
@@ -31,9 +31,9 @@ const Card = () => {
           <button onClick={getBalance}>atualizar</button>
         </BalanceCards>
 
-        <BalanceCards>
-          vai ter um grafico aqui.
-        </BalanceCards>
+        <ChartCard>
+          <ChartSales /> {/* <--- AQUI ESTÁ O MEU GRAFICO */}
+        </ChartCard>
       </Container>
     </>
   )

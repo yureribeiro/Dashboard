@@ -32,9 +32,7 @@ const Card = () => {
         </BalanceCards>
 
         <BalanceCards>
-          <p>Total acumulado:</p>
-          <p>R$ {balance}</p>
-          <button onClick={getBalance}>atualizar</button>
+          vai ter um grafico aqui.
         </BalanceCards>
       </Container>
     </>

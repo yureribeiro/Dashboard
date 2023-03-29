@@ -7,8 +7,9 @@ export const Buttonlogout = styled.button`
     padding: .5rem;
     border-radius: .5rem;
     border: .1rem solid #232323;
+    transition: .4s;
     :hover {
-      background: #FDB827;
+      background: #2C3333;
       box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4);
     }
 `

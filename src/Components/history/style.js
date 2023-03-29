@@ -20,7 +20,7 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
-  max-height: 49vh;
+  max-height: 54vh;
   background-color: #393E46;
   box-shadow: .1rem .1rem .3rem #000; 
   padding: 1rem;

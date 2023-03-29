@@ -10,8 +10,6 @@ const Sidebar = () => {
     <Container>
       <div>
         <NavLink to={'/dashboard'}> <img src={ChartIcon} /></NavLink>
-      </div>
-      <div>
         <NavLink to={'/dashboard'}> <img src={Drive} /></NavLink>
       </div>
       <Logout />

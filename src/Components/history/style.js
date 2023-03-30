@@ -31,11 +31,14 @@ export const Container = styled.div`
 
   @media (max-width: 1050px ) {
     min-height: 55%;
-    max-height: 70vh;
+    max-height: 60vh;
+  }
 
-    p:first-of-type {
-      display: none;
-    }
+  @media (max-width: 730px ) {
+  margin-bottom: 1rem;
+  p:first-of-type {
+    display: none;
+  }
   }
 
   div {

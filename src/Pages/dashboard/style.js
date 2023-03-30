@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const DashboardContainer = styled.div`
   width: 96vw;
-  max-height: 100%;
+  max-height: 80vh;
   margin-left: 1rem;
   display: flex;
   gap: 1rem;

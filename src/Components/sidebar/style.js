@@ -14,10 +14,10 @@ export const Container = styled.nav`
   padding-bottom: 1rem;
   margin-right: 1rem;
   
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     flex-direction: row;
-    min-height: 5vh;
-    max-height: 8vh;
+    min-height: 7vh;
+    max-height: 10vh;
     align-items: center;
    }
 

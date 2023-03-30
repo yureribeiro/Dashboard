@@ -11,10 +11,9 @@ export const CategoryContainer = styled.div`
   background-color: #393E46;
   box-shadow: .1rem .1rem .3rem #000; 
   
-  @media (max-width: 600px) {
-    min-width: 90%;
+  @media (max-width: 720px) {
+    min-width: 95%;
     max-height: 50%;
-    
    }
 `
 

@@ -38,6 +38,7 @@ const Login = () => {
     try {
       setLoading(true)
       await userExists()
+      setForm({ email: '', password: '' })
     }
     catch (error) {
       console.log('algo deu errado', error)

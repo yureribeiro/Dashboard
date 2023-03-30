@@ -16,6 +16,7 @@ const Sales = ({ categories }) => {
   const createSale = async (data, categoryId) => {
     try {
       await api.post(`sales/${user.id}/${categoryId}`, data)
+      alert(`registrado com sucesso!`)
     } catch (error) {
       console.log(error)
     }

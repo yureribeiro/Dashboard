@@ -20,8 +20,8 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
-  min-height: 55%;
-  max-height: 70%;
+  min-height: 50vh;
+  max-height: 69vh; 
   background-color: #393E46;
   box-shadow: .1rem .1rem .3rem #000; 
   padding: 1rem;
@@ -29,9 +29,9 @@ export const Container = styled.div`
   border-radius: .5rem;
   overflow: auto;
 
-  @media (max-width: 1050px) {
+  @media (max-width: 1050px ) {
     min-height: 55%;
-    max-height: 52%;
+    max-height: 70vh;
 
     p:first-of-type {
       display: none;

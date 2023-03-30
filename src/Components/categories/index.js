@@ -28,6 +28,7 @@ const Categories = () => {
     try {
       const response = await api.post(`categories/${user.id}`, data)
         .then(() => setCategories(prevCategories => [...prevCategories, response.data]))
+      alert(`${response.data} cadastrada com sucesso!`)
     } catch (error) {
       console.log(error)
     }

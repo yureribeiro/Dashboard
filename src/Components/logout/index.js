@@ -5,14 +5,14 @@ import { Buttonlogout } from './style'
 import LogoutImg from '../../images/logout.svg'
 
 const Logout = () => {
-  const { user, setUser } = useContext(userContext)
+  const { setUser } = useContext(userContext)
   const navigate = useNavigate()
 
   const logoff = async () => {
-    localStorage.removeItem(user)
-    await setUser(null)
-    navigate('/')
-  }
+    localStorage.removeItem('user');
+    await setUser(null);
+    navigate('/');
+  };
 
   return (
     <Buttonlogout onClick={logoff}>

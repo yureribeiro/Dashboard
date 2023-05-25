@@ -14,7 +14,7 @@ export const Container = styled.header`
 
     img {
       padding-left: 1rem;
-      width: 5rem;
+      width: 4.5rem;
       filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.9));
     }
 `

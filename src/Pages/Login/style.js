@@ -17,7 +17,7 @@ export const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   padding-right: 2rem;
-  box-shadow: 0 .1rem .5rem #000; 
+  box-shadow: 0 .1rem .5rem #000;
  
 
   a {
@@ -52,13 +52,14 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: .5rem;
   background-color: #393E46;
   border-radius: .5rem;
   padding: 1rem;
   margin-top: 23vh;
   box-shadow: .2rem .2rem .6rem #000; 
   img {
-    width: 7rem;
+    width: 6rem;
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.9));
   }
 `
@@ -81,7 +82,7 @@ export const Form = styled.form`
     background: rgba(20, 20, 20, 0.56);
     box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
     outline: none;
-    margin-bottom: 1rem;
+    margin: .5rem 0 1rem 0;
     color: #ffff;
     cursor: pointer;
   } 
@@ -100,7 +101,7 @@ export const Form = styled.form`
     box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.4);
     border: none;
     border-radius: .5rem;
-    padding: .4rem;
+    padding: .5rem;
     width: 70%;
     font-weight: bold;
     cursor: pointer;
